@@ -33,7 +33,7 @@ html {
   --header-height: 100px;
 
   /* Colors (blue/indigo theme) */
-  --accent: #3b82f6;   /* blue */
+  --accent: #3b82f6; /* blue */
   --accent-2: #6366f1; /* indigo */
 
   --accent-rgb: 59, 130, 246;
@@ -65,9 +65,16 @@ body {
   color: var(--text-secondary);
 
   /* Background (same layout, just blue/indigo hues) */
-  background:
-    radial-gradient(900px 700px at 18% 0%, rgba(var(--accent-2-rgb), 0.38), transparent 62%),
-    radial-gradient(900px 700px at 92% 28%, rgba(var(--accent-rgb), 0.26), transparent 62%),
+  background: radial-gradient(
+      900px 700px at 18% 0%,
+      rgba(var(--accent-2-rgb), 0.38),
+      transparent 62%
+    ),
+    radial-gradient(
+      900px 700px at 92% 28%,
+      rgba(var(--accent-rgb), 0.26),
+      transparent 62%
+    ),
     linear-gradient(180deg, #162246 0%, #101c38 55%, #0b162b 100%);
 }
 
@@ -86,7 +93,7 @@ body {
    ========================= */
 .site-header {
   height: var(--header-height);
-  background: rgba(10, 16, 32, 0.70);
+  background: rgba(10, 16, 32, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -150,13 +157,14 @@ body {
 
   position: fixed;
   top: var(--sidebar-top);
+  bottom: 20px; /* keep sidebar inside viewport */
+
   left: calc(
     (100vw - min(var(--page-width), (100% - var(--page-padding)))) / 2 -
       var(--sidebar-nudge-left)
   );
 
-  height: calc(100vh - var(--sidebar-top) - 20px);
-  overflow-y: auto;
+  overflow: hidden; /* ensures rounded corners always clip scroll content */
 }
 
 .sidebar .profile {
@@ -193,7 +201,8 @@ body {
   text-decoration: none;
   border-radius: 10px;
 
-  transition: transform 120ms ease, background 160ms ease, border-color 160ms ease;
+  transition: transform 120ms ease, background 160ms ease,
+    border-color 160ms ease;
 }
 
 .sidebar nav a:hover {
@@ -379,7 +388,7 @@ section h2 {
 
   color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(var(--accent-rgb), 0.35);
-  background: rgba(var(--accent-rgb), 0.10);
+  background: rgba(var(--accent-rgb), 0.1);
 }
 
 .project-link {
@@ -411,7 +420,6 @@ section h2 {
     no-repeat center / contain;
 }
 
-
 /* =========================
    Scroll-in reveal animations
    ========================= */
@@ -430,12 +438,6 @@ section h2 {
 /* =========================
    Sidebar: fixed photo + scrollable content
    ========================= */
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 100px); /* header is 100px */
-}
 
 /* Fixed photo area */
 .sidebar-top {
@@ -460,9 +462,10 @@ section h2 {
   );
 }
 
-/* Scrollable section */
+/* Scrollable section (scroll happens here, not on the rounded container) */
 .sidebar-scroll {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0; /* IMPORTANT: allows flex child to scroll */
   overflow-y: auto;
   padding: 1rem;
 }
@@ -488,7 +491,6 @@ section h2 {
     height: 90px;
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
@@ -517,8 +519,10 @@ section h2 {
     position: relative;
     left: 0;
     top: 0;
+    bottom: auto;
     width: 100%;
     height: auto;
+    overflow: hidden;
   }
 
   main {
