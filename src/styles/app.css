@@ -32,9 +32,12 @@ html {
   /* IMPORTANT: used to prevent overscroll on anchor jumps */
   --header-height: 100px;
 
-  /* Colors (your own look, not Jeppe’s) */
-  --accent: #ff6b6b;   /* coral */
-  --accent-2: #6c5ce7; /* violet */
+  /* Colors (blue/indigo theme) */
+  --accent: #3b82f6;   /* blue */
+  --accent-2: #6366f1; /* indigo */
+
+  --accent-rgb: 59, 130, 246;
+  --accent-2-rgb: 99, 102, 241;
 
   --text-primary: #f3f6ff;
   --text-secondary: rgba(243, 246, 255, 0.82);
@@ -61,10 +64,10 @@ body {
   line-height: 1.65;
   color: var(--text-secondary);
 
-  /* Background (keep your style, not starfield) */
+  /* Background (same layout, just blue/indigo hues) */
   background:
-    radial-gradient(900px 700px at 18% 0%, rgba(108, 92, 231, 0.38), transparent 62%),
-    radial-gradient(900px 700px at 92% 28%, rgba(255, 107, 107, 0.26), transparent 62%),
+    radial-gradient(900px 700px at 18% 0%, rgba(var(--accent-2-rgb), 0.38), transparent 62%),
+    radial-gradient(900px 700px at 92% 28%, rgba(var(--accent-rgb), 0.26), transparent 62%),
     linear-gradient(180deg, #162246 0%, #101c38 55%, #0b162b 100%);
 }
 
@@ -169,7 +172,7 @@ body {
   border-radius: 999px;
   object-fit: cover;
 
-  border: 2px solid rgba(255, 107, 107, 0.65);
+  border: 2px solid rgba(var(--accent-rgb), 0.65);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
@@ -200,7 +203,7 @@ body {
 
 .sidebar nav a.active {
   border-left-color: var(--accent);
-  background: rgba(255, 107, 107, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -375,8 +378,8 @@ section h2 {
   font-size: 0.85rem;
 
   color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 107, 107, 0.35);
-  background: rgba(255, 107, 107, 0.10);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  background: rgba(var(--accent-rgb), 0.10);
 }
 
 .project-link {
