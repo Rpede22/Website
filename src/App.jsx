@@ -26,12 +26,10 @@ function ProjectLink({ href }) {
   );
 }
 
-
 export default function App() {
   const sectionIds = NAV_ITEMS.map((x) => x.id);
   const activeId = useScrollSpy(sectionIds, { offsetPx: 150 });
 
-  // scroll reveal (light)
   useRevealOnScroll({ rootMargin: "0px 0px -12% 0px" });
 
   return (
@@ -249,7 +247,6 @@ export default function App() {
           <Section id="competences" title="Competences">
             <div className="stack">
 
-              {/* Languages */}
               <div className="entry">
                 <div className="entry-left">
                   <div className="entry-date">Languages</div>
@@ -263,7 +260,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Programming Languages */}
               <div className="entry">
                 <div className="entry-left">
                   <div className="entry-date">Programming Languages</div>
@@ -284,7 +280,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Tools & Technologies */}
               <div className="entry">
                 <div className="entry-left">
                   <div className="entry-date">Tools & Technologies</div>

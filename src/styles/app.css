@@ -17,11 +17,10 @@ html {
    Theme
    ========================= */
 :root {
-  /* Layout */
   --page-width: 1200px;
   --page-padding: 3rem;
 
-  --sidebar-top: 120px; /* should be slightly below header */
+  --sidebar-top: 120px;
   --sidebar-width: 350px;
   --gap: 2rem;
   --main-max: 900px;
@@ -29,12 +28,10 @@ html {
   --sidebar-photo-size: 110px;
   --sidebar-nudge-left: 60px;
 
-  /* IMPORTANT: used to prevent overscroll on anchor jumps */
   --header-height: 100px;
 
-  /* Colors (blue/indigo theme) */
-  --accent: #3b82f6; /* blue */
-  --accent-2: #6366f1; /* indigo */
+  --accent: #3b82f6;
+  --accent-2: #6366f1;
 
   --accent-rgb: 59, 130, 246;
   --accent-2-rgb: 99, 102, 241;
@@ -51,7 +48,6 @@ html {
   --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 
-/* Fix “scrolls too far” when clicking sidebar links */
 section {
   scroll-margin-top: calc(var(--header-height));
 }
@@ -64,7 +60,6 @@ body {
   line-height: 1.65;
   color: var(--text-secondary);
 
-  /* Background (same layout, just blue/indigo hues) */
   background: radial-gradient(
       900px 700px at 18% 0%,
       rgba(var(--accent-2-rgb), 0.38),
@@ -89,7 +84,7 @@ body {
 }
 
 /* =========================
-   Header (thinner)
+   Header
    ========================= */
 .site-header {
   height: var(--header-height);
@@ -157,14 +152,14 @@ body {
 
   position: fixed;
   top: var(--sidebar-top);
-  bottom: 20px; /* keep sidebar inside viewport */
+  bottom: 20px;
 
   left: calc(
     (100vw - min(var(--page-width), (100% - var(--page-padding)))) / 2 -
       var(--sidebar-nudge-left)
   );
 
-  overflow: hidden; /* ensures rounded corners always clip scroll content */
+  overflow: hidden;
 }
 
 .sidebar .profile {
@@ -184,7 +179,6 @@ body {
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
-/* Sidebar nav */
 .side-nav {
   margin-top: 0.75rem;
   width: 100%;
@@ -260,7 +254,6 @@ body {
   flex: 1;
 }
 
-/* centered location row */
 .location {
   width: 100%;
   display: flex;
@@ -287,7 +280,6 @@ main {
   margin-left: calc(var(--sidebar-width) + var(--gap));
 }
 
-/* Sections are transparent */
 section {
   margin-bottom: 4rem;
   padding: 0;
@@ -296,7 +288,6 @@ section {
   border-radius: 0;
 }
 
-/* Typography */
 h1,
 h2,
 h3 {
@@ -310,7 +301,6 @@ section h2 {
   font-weight: 700;
 }
 
-/* Make section headings use same gradient */
 section h2 {
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 60%);
   -webkit-background-clip: text;
@@ -469,15 +459,13 @@ section p {
   );
 }
 
-/* Scrollable section (scroll happens here, not on the rounded container) */
 .sidebar-scroll {
   flex: 1 1 auto;
-  min-height: 0; /* IMPORTANT: allows flex child to scroll */
+  min-height: 0;
   overflow-y: auto;
   padding: 1rem;
 }
 
-/* Subtle scrollbar */
 .sidebar-scroll::-webkit-scrollbar {
   width: 6px;
 }
@@ -491,7 +479,6 @@ section p {
   background: transparent;
 }
 
-/* Optional: slightly smaller photo on very small screens */
 @media (max-height: 700px) {
   .profile-photo {
     width: 90px;
@@ -514,7 +501,7 @@ section p {
   :root {
     --sidebar-top: 0px;
     --sidebar-nudge-left: 0px;
-    --header-height: 64px; /* slightly larger on mobile */
+    --header-height: 64px;
   }
 
   .content-wrapper {
