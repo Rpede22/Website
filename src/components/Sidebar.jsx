@@ -76,7 +76,7 @@ export default function Sidebar({ navItems, activeId }) {
         <div className="contact-list">
           <a
             className="contact-link"
-            href="https://github.com/yourname"
+            href="https://github.com/Rpede22"
             target="_blank"
             rel="noreferrer"
           >
@@ -86,7 +86,7 @@ export default function Sidebar({ navItems, activeId }) {
 
           <a
             className="contact-link"
-            href="https://linkedin.com/in/yourname"
+            href="https://www.linkedin.com/in/rasmus-burkarl-pedersen/"
             target="_blank"
             rel="noreferrer"
           >
