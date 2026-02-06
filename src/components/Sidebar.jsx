@@ -1,4 +1,4 @@
-function IconGithub(props) {
+function IconGitHub(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -14,7 +14,7 @@ function IconLinkedIn(props) {
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         fill="currentColor"
-        d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.48 1s2.5 1.12 2.5 2.5ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.05c.53-1.02 1.83-2.2 3.77-2.2C19.4 8 22 10.1 22 14.6V24h-4v-8.2c0-1.96-.04-4.48-2.73-4.48-2.73 0-3.15 2.13-3.15 4.34V24h-4V8Z"
+        d="M4.98 3.5C3.88 3.5 3 4.38 3 5.47c0 1.08.88 1.97 1.98 1.97h.02C6.1 7.44 7 6.55 7 5.47 7 4.38 6.1 3.5 5 3.5h-.02zM3.5 21h3V9h-3v12zM9 9h2.9v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V21h-3v-5.3c0-1.26-.02-2.88-1.76-2.88-1.76 0-2.03 1.37-2.03 2.79V21H9V9z"
       />
     </svg>
   );
@@ -25,7 +25,7 @@ function IconMail(props) {
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         fill="currentColor"
-        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
+        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
       />
     </svg>
   );
@@ -36,7 +36,7 @@ function IconPin(props) {
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
         fill="currentColor"
-        d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+        d="M12 2c-3.31 0-6 2.69-6 6 0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"
       />
     </svg>
   );
@@ -45,59 +45,67 @@ function IconPin(props) {
 export default function Sidebar({ navItems, activeId }) {
   return (
     <aside className="sidebar">
-      <div className="profile">
-        <img className="profile-photo" src="/me.jpg" alt="Portrait" />
+      {/* Fixed top: profile picture (does NOT scroll) */}
+      <div className="sidebar-top">
+        <img
+          className="profile-photo"
+          src="/me.jpg"
+          alt="Portrait of Rasmus Burkarl Pedersen"
+        />
       </div>
 
-      <nav className="side-nav">
-        {navItems.map((item) => {
-          const isActive = activeId === item.id;
-          return (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={isActive ? "active" : ""}
-            >
-              {item.label}
-            </a>
-          );
-        })}
-      </nav>
+      {/* Everything below scrolls when needed */}
+      <div className="sidebar-scroll">
+        <nav className="side-nav">
+          {navItems.map((item) => {
+            const isActive = activeId === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={isActive ? "active" : ""}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
 
-      <div className="sidebar-divider" />
+        <div className="sidebar-divider" />
 
-      <div className="contact-list" aria-label="Contact links">
-        <a
-          className="contact-link"
-          href="https://github.com/Rpede22"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <IconGithub className="contact-icon" />
-          <span>GitHub</span>
-        </a>
+        <div className="contact-list">
+          <a
+            className="contact-link"
+            href="https://github.com/yourname"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconGitHub className="contact-icon" />
+            <span>GitHub</span>
+          </a>
 
-        <a
-          className="contact-link"
-          href="https://www.linkedin.com/in/rasmus-burkarl-pedersen/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <IconLinkedIn className="contact-icon" />
-          <span>LinkedIn</span>
-        </a>
+          <a
+            className="contact-link"
+            href="https://linkedin.com/in/yourname"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconLinkedIn className="contact-icon" />
+            <span>LinkedIn</span>
+          </a>
 
-        <a className="contact-link" href="mailto:burkarl@outlook.dk">
-          <IconMail className="contact-icon" />
-          <span>burkarl@outlook.dk</span>
-        </a>
-      </div>
+          <a className="contact-link" href="mailto:burkarl@outlook.dk">
+            <IconMail className="contact-icon" />
+            <span>burkarl@outlook.dk</span>
+          </a>
+        </div>
 
-      <div className="sidebar-spacer" />
+        <div className="sidebar-spacer" />
 
-      <div className="location">
-        <IconPin className="location-pin" />
-        <span>Aarhus, Denmark</span>
+        <div className="location">
+          <IconPin className="location-pin" />
+          <span>Aarhus, Denmark</span>
+        </div>
       </div>
     </aside>
   );
