@@ -99,9 +99,10 @@ export default function App() {
 
           <Section id="projects" title="Projects">
             <div className="item-card">
-              <h3>"Work in Progress" Cross-platform Budget Application</h3>
+              <h3>WORK IN PROGRESS - Cross-platform Budget Application</h3>
               <p className="muted">
-                A cross-platform budget application built with .NET, C# and Avalonia.
+                A cross-platform budget application built with .NET, C# and Avalonia. 
+                Made to give the user a better overview of their budget and help them manage their finances. The application features a clean and intuitive user interface, where users can easily enter their income and expenses.
               </p>
 
               <div className="item-tags">
@@ -139,6 +140,7 @@ export default function App() {
               <div className="item-tags">
                 <span className="item-tag">Python</span>
                 <span className="item-tag">PyTorch</span>
+                <span className="item-tag">Tensor</span>
                 <span className="item-tag">NumPy</span>
               </div>
 
