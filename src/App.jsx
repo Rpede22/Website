@@ -99,6 +99,21 @@ export default function App() {
 
           <Section id="projects" title="Projects">
             <div className="item-card">
+              <h3>"Work in Progress" Cross-platform Budget Application</h3>
+              <p className="muted">
+                A cross-platform budget application built with .NET, C# and Avalonia.
+              </p>
+
+              <div className="item-tags">
+                <span className="item-tag">C#</span>
+                <span className="item-tag">.NET</span>
+                <span className="item-tag">Avalonia</span>
+              </div>
+
+              <ProjectLink href="To be added when the project is finished" />
+            </div>
+
+            <div className="item-card">
               <h3>Personal Portfolio Website</h3>
               <p className="muted">
                 A modern, responsive portfolio website built with React. Features
@@ -274,6 +289,8 @@ export default function App() {
                     <li>Jolie</li>
                     <li>HTML</li>
                     <li>PHP</li>
+                    <li>C#</li>
+                    <li>C++</li>
                     <li>JavaScript (React, Node.js)</li>
                     <li>Databases: PostgreSQL, MySQL, SQLite</li>
                   </ul>
@@ -287,6 +304,7 @@ export default function App() {
 
                 <div className="entry-right">
                   <ul className="muted">
+                    <li>.NET</li>
                     <li>Git</li>
                     <li>Linux</li>
                     <li>Docker</li>
