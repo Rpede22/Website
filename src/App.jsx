@@ -99,8 +99,7 @@ export default function App() {
 
           <Section id="projects" title="Projects">
             <div className="item-card">
-              <h3>WORK IN PROGRESS 
-                <br /> 
+              <h3>
                 Cross-platform Budget Application</h3>
               <p className="muted">
                 A cross-platform budget application built with .NET, C# and Avalonia. 
@@ -113,7 +112,7 @@ export default function App() {
                 <span className="item-tag">Avalonia</span>
               </div>
 
-              <ProjectLink href="To be added when the project is finished" />
+              <ProjectLink href="https://github.com/Rpede22/Budget" />
             </div>
 
             <div className="item-card">
