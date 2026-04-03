@@ -104,6 +104,7 @@ export default function App() {
               <p className="muted">
                 A cross-platform budget application built with .NET, C# and Avalonia. 
                 Made to give the user a better overview of their budget and help them manage their finances. The application features a clean and intuitive user interface, where users can easily enter their income and expenses.
+                The program gives the user a clear overview of their budget, with visualizations and charts of their budget.
               </p>
 
               <div className="item-tags">
