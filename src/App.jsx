@@ -59,7 +59,7 @@ export default function App() {
 
               <div className="entry">
                 <div className="entry-left">
-                  <div className="entry-date">April 2026 – NOW</div>
+                  <div className="entry-date">April 2026 – Current Job</div>
                   <div className="entry-sub">Junior IT Support</div>
                 </div>
 
