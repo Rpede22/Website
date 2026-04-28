@@ -100,7 +100,7 @@ export default function App() {
           <Section id="projects" title="Projects">
             <div className="item-card">
               <h3>
-                VibeCoded Personal Dashboard</h3>
+                Vibe Coded Personal Dashboard</h3>
               <p className="muted">
                 A local-only personal dashboard desktop app vibe coded with Claude Code, built with Next.js 16 + Electron and backed by SQLite via Prisma. 
                 Integrates 8+ external APIs — NHL, FotMob, ESPN, SportAPI7, Blizzard, Raider.IO, Strava and iCloud CalDAV — 
