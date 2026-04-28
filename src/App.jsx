@@ -100,6 +100,28 @@ export default function App() {
           <Section id="projects" title="Projects">
             <div className="item-card">
               <h3>
+                VibeCoded Personal Dashboard</h3>
+              <p className="muted">
+                A local-only personal dashboard desktop app vibe coded with Claude Code, built with Next.js 16 + Electron and backed by SQLite via Prisma. 
+                Integrates 8+ external APIs — NHL, FotMob, ESPN, SportAPI7, Blizzard, Raider.IO, Strava and iCloud CalDAV — 
+                to aggregate live sports scores, WoW raid/M+ progress, school deadlines, running training and calendar events into a single dark-themed desktop window.
+              </p>
+
+              <div className="item-tags">
+                <span className="item-tag">TypeScript</span>
+                <span className="item-tag">Next.js</span>
+                <span className="item-tag">Electron</span>
+                <span className="item-tag">SQLite</span>
+                <span className="item-tag">Prisma</span>
+                <span className="item-tag">REST APIs</span>
+                <span className="item-tag">Full-Stack</span>
+              </div>
+
+              <ProjectLink href="https://github.com/Rpede22/Personal-Dashboard" />
+            </div>
+
+            <div className="item-card">
+              <h3>
                 Cross-platform Budget Application</h3>
               <p className="muted">
                 A cross-platform budget application built with .NET, C# and Avalonia. 
