@@ -59,6 +59,29 @@ export default function App() {
 
               <div className="entry">
                 <div className="entry-left">
+                  <div className="entry-date">April 2026 – NOW</div>
+                  <div className="entry-sub">Junior IT Support</div>
+                </div>
+
+                <div className="entry-right">
+                  <h3>Odder Forsyning</h3>
+                  <p className="muted">
+                    Ad-hoc IT support focused on maintaining and monitoring network 
+                    infrastructure and utility control systems. Conducting on-site visits 
+                    to diagnose and resolve connectivity issues, ensuring stable operation 
+                    of systems beyond direct human interaction.
+                  </p>
+
+                  <div className="item-tags">
+                    <span className="item-tag">Networking</span>
+                    <span className="item-tag">Troubleshooting</span>
+                    <span className="item-tag">Field Work</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="entry">
+                <div className="entry-left">
                   <div className="entry-date">Nov 2020 – June 2022</div>
                   <div className="entry-sub">Crew worker and Trainer</div>
                 </div>
