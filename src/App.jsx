@@ -1,6 +1,8 @@
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import Section from "./components/Section.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import PrintCV from "./components/PrintCV.jsx";
 import { useScrollSpy } from "./hooks/useScrollSpy.js";
 import { useRevealOnScroll } from "./hooks/useRevealOnScroll.js";
 
@@ -12,7 +14,7 @@ const NAV_ITEMS = [
   { id: "competences", label: "Competences" },
 ];
 
-const PROGRAMMING_SKILLS = [
+export const PROGRAMMING_SKILLS = [
   { name: "Python", level: 95 },
   { name: "Java", level: 65 },
   { name: "JavaScript (Node.js)", level: 60 },
@@ -65,12 +67,16 @@ export default function App() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
+
       <Header />
 
       <div className="content-wrapper">
         <Sidebar navItems={NAV_ITEMS} activeId={activeId} />
 
-        <main>
+        <main id="main-content">
           <Section id="about" title="About me">
             <p>
               I&apos;m a computer science student, interested in software development. I am able to program in a variety of programming languages and handle great amounts of data, 
@@ -391,6 +397,10 @@ export default function App() {
 
         </main>
       </div>
+
+      <ScrollToTop />
+
+      <PrintCV />
     </>
   );
 }

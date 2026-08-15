@@ -97,6 +97,7 @@ export default function Sidebar({ navItems, activeId }) {
                 key={item.id}
                 href={`#${item.id}`}
                 className={isActive ? "active" : ""}
+                aria-current={isActive ? "location" : undefined}
                 onClick={(e) => handleNavClick(e, item.id)}
               >
                 <span className="nav-dot" aria-hidden />
