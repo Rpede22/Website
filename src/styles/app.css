@@ -300,9 +300,9 @@ body {
 .download-cv {
   margin: 0.9rem auto 0.25rem;
   padding: 0.4rem 0.9rem;
-  align-self: center;
 
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
