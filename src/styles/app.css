@@ -294,6 +294,74 @@ body {
   flex: 1;
 }
 
+/* =========================
+   Download CV button
+   ========================= */
+.download-cv {
+  margin: 1.15rem 0 0.35rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+
+  border: 1px solid rgba(var(--accent-rgb), 0.55);
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-rgb), 0.9),
+    rgba(var(--accent-2-rgb), 0.9)
+  );
+  box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.28);
+
+  transition: transform 160ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.download-cv:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(var(--accent-rgb), 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-rgb), 1),
+    rgba(var(--accent-2-rgb), 1)
+  );
+}
+
+.download-cv:active {
+  transform: translateY(0);
+}
+
+.download-cv-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.download-cv-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.15rem;
+}
+
+.download-cv-hint kbd {
+  display: inline-block;
+  padding: 0.05em 0.4em;
+  font-family: inherit;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
 .location {
   width: 100%;
   display: flex;
@@ -1161,6 +1229,17 @@ section p {
   .print-cv * {
     box-shadow: none !important;
     text-shadow: none !important;
+  }
+
+  /* Force headings black — override the global `h1,h2,h3 { color: var(--text-primary) }` */
+  .print-cv h1,
+  .print-cv h2,
+  .print-cv h3 {
+    color: #111 !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #111 !important;
   }
 
   /* --- Name + contact --- */
