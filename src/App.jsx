@@ -12,6 +12,38 @@ const NAV_ITEMS = [
   { id: "competences", label: "Competences" },
 ];
 
+const PROGRAMMING_SKILLS = [
+  { name: "Python", level: 95 },
+  { name: "Java", level: 65 },
+  { name: "JavaScript (Node.js)", level: 60 },
+  { name: "C", level: 55 },
+  { name: "Databases (PostgreSQL, MySQL, SQLite)", level: 50 },
+  { name: "R", level: 45 },
+  { name: "PHP", level: 38 },
+  { name: "HTML", level: 33 },
+  { name: "React", level: 28 },
+  { name: "C++", level: 23 },
+  { name: "C#", level: 18 },
+  { name: "Jolie", level: 15 },
+];
+
+function SkillBar({ name, level }) {
+  return (
+    <div className="skill">
+      <div className="skill-row">
+        <span className="skill-name">{name}</span>
+        <span className="skill-value">{level}%</span>
+      </div>
+      <div className="skill-bar">
+        <div
+          className="skill-fill"
+          style={{ "--skill-level": `${level}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function ProjectLink({ href }) {
   return (
     <a
@@ -330,19 +362,11 @@ export default function App() {
                 </div>
 
                 <div className="entry-right">
-                  <ul className="muted">
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>R</li>
-                    <li>Jolie</li>
-                    <li>HTML</li>
-                    <li>PHP</li>
-                    <li>C#</li>
-                    <li>C++</li>
-                    <li>JavaScript (React, Node.js)</li>
-                    <li>Databases: PostgreSQL, MySQL, SQLite</li>
-                  </ul>
+                  <div className="skills-grid">
+                    {PROGRAMMING_SKILLS.map((s) => (
+                      <SkillBar key={s.name} name={s.name} level={s.level} />
+                    ))}
+                  </div>
                 </div>
               </div>
 

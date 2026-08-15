@@ -43,6 +43,31 @@ function IconPin(props) {
 }
 
 export default function Sidebar({ navItems, activeId }) {
+  const handleNavClick = (e, id) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+
+    // Reveal every section between the current scroll position and the
+    // target so the smooth scroll doesn't cross faded-out blocks.
+    document.querySelectorAll("[data-reveal]").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+
+    const headerH =
+      parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--header-height"
+        )
+      ) || 100;
+
+    const y =
+      target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+    history.replaceState(null, "", `#${id}`);
+  };
+
   return (
     <aside className="sidebar">
       {/* Fixed top: profile picture (does NOT scroll) */}
@@ -64,8 +89,10 @@ export default function Sidebar({ navItems, activeId }) {
                 key={item.id}
                 href={`#${item.id}`}
                 className={isActive ? "active" : ""}
+                onClick={(e) => handleNavClick(e, item.id)}
               >
-                {item.label}
+                <span className="nav-dot" aria-hidden />
+                <span>{item.label}</span>
               </a>
             );
           })}
