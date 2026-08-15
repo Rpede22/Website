@@ -298,36 +298,40 @@ body {
    Download CV button
    ========================= */
 .download-cv {
-  margin: 1.15rem 0 0.35rem;
-  padding: 0.7rem 1rem;
-  width: 100%;
+  margin: 0.9rem auto 0.25rem;
+  padding: 0.4rem 0.9rem;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: 0.4rem;
 
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
 
   border: 1px solid rgba(var(--accent-rgb), 0.55);
-  border-radius: 10px;
+  border-radius: 8px;
   background: linear-gradient(
     135deg,
     rgba(var(--accent-rgb), 0.9),
     rgba(var(--accent-2-rgb), 0.9)
   );
-  box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.28);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.22);
 
   transition: transform 160ms ease, box-shadow 200ms ease, background 200ms ease;
 }
 
+/* center it in the sidebar column */
+.contact-list + .download-cv {
+  align-self: center;
+}
+
 .download-cv:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(var(--accent-rgb), 0.4);
+  box-shadow: 0 8px 18px rgba(var(--accent-rgb), 0.35);
   background: linear-gradient(
     135deg,
     rgba(var(--accent-rgb), 1),
@@ -340,26 +344,26 @@ body {
 }
 
 .download-cv-icon {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
 }
 
 .download-cv-hint {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   text-align: center;
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
 }
 
 .download-cv-hint kbd {
   display: inline-block;
-  padding: 0.05em 0.4em;
+  padding: 0 0.3em;
   font-family: inherit;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 3px;
 }
 
 .location {
