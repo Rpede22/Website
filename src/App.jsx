@@ -32,9 +32,8 @@ function SkillBar({ name, level }) {
     <div className="skill">
       <div className="skill-row">
         <span className="skill-name">{name}</span>
-        <span className="skill-value">{level}%</span>
       </div>
-      <div className="skill-bar">
+      <div className="skill-bar" aria-hidden>
         <div
           className="skill-fill"
           style={{ "--skill-level": `${level}%` }}

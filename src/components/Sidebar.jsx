@@ -48,10 +48,18 @@ export default function Sidebar({ navItems, activeId }) {
     if (!target) return;
     e.preventDefault();
 
-    // Reveal every section between the current scroll position and the
-    // target so the smooth scroll doesn't cross faded-out blocks.
-    document.querySelectorAll("[data-reveal]").forEach((el) => {
+    // Reveal every section instantly so the smooth scroll never crosses
+    // a faded-out block (which used to look like a bright flash).
+    const reveals = document.querySelectorAll("[data-reveal]");
+    reveals.forEach((el) => {
+      el.classList.add("no-reveal-anim");
       el.classList.add("is-visible");
+    });
+    // Force a synchronous style flush so the instant-visible state paints
+    // before the scroll starts, then restore the transition class.
+    void document.body.offsetHeight;
+    requestAnimationFrame(() => {
+      reveals.forEach((el) => el.classList.remove("no-reveal-anim"));
     });
 
     const headerH =
